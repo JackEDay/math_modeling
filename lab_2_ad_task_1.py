@@ -10,7 +10,7 @@ xs = ((-b) - d) / (2*a)
 if D < 0:
     print('Нет корней') 
     
-elif d == 0:
+elif D == 0:
     print(f'Корень: {xs} ')
     
 else:
