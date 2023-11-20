@@ -5,5 +5,10 @@ ar = np.zeros((n, m))
 
 for i in range (0, n):
     for j in range (0, m):
-        ar[i, j] = np.sin(n * (i+1) + m * (j + 1))
+        k = np.sin(n * (i+1) + m * (j + 1))
+        if k > 0:
+            ar[i, j] = k
+        else:
+            ar[i, j] = 0
         
+print(ar)
