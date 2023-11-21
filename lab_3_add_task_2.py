@@ -12,8 +12,8 @@ last = int(input("Введите последний элемент:       "))
 pos = int(input("Введите позицию последнего элемента(0, 4):        "))
 
 if pos < 4:
-    for j in range (4, pos):
-        ar[0, j] = ar[0, j + 1]
+    for j in range (3, pos - 1, -1):
+        ar[0, j + 1] = ar[0, j]
     ar[0, pos] = last
 
 else:
