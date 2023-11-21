@@ -1,6 +1,7 @@
 import numpy as np
-n = int(input())
-m = int(input())
+
+n = 4
+m = 4
 ar = np.zeros((n, m))
 
 for i in range (0, n):

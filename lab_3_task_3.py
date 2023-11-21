@@ -4,16 +4,17 @@ import numpy as np
 x0 = 0
 y0 = 82
 v0 = 6
-t = 0
 
-ans = np.zeros((6, 3))
+t = np.arange(0, 5, 0.1)
+ans = np.zeros((len(t), 3))
+x = x0 + v0*t
+y = y0 + v0*t - (g*t**2)/2
 
-for i in range (0, 6):
-    x = x0 + v0*t
-    y = y0 + v0*t - (g*t**2)/2
-    ans[i, 0] = t
-    ans[i, 1] = x
-    ans[i, 2] = y
-    t += 1
+print(ans)    
 
+for i in range (0, len(t)):
+    ans[i, 0] = t[i]
+    ans[i, 1] = x[i]
+    ans[i, 2] = y[i]
+    
 print(ans)
