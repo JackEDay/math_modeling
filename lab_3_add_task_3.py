@@ -11,7 +11,6 @@ for i in range (0, n):
         ar[i, g] = a
         g += 1
     g = 0
-    i += 1
 
 for k in range (0, n):
     for j in range (0, m):

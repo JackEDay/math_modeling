@@ -13,7 +13,6 @@ for i in range (0, ar_y):
         frst_ar[i, g] = a
         g += 1
     g = 0
-    i += 1
 
 i = 0
 g = 0
@@ -24,7 +23,6 @@ for i in range (0, ar_y):
         sec_ar[i, g] = a
         g += 1
     g = 0
-    i += 1
     
 for k in range (0, ar_y):
     for t in range (0, ar_x):
@@ -35,6 +33,5 @@ for k in range (0, ar_y):
         
         t += 1
     t = 0
-    k += 1
 
 print(thrd_ar)
