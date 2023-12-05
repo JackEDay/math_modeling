@@ -8,7 +8,7 @@ def space(op, a, b, h, r):
     elif op == 'Triangle':
         S = (a * h) / 2
 
-    elif op == 'Rectangle':
+    elif op == 'Rect':
         S = a * b
     
     else:
