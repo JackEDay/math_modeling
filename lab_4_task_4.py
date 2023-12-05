@@ -2,10 +2,8 @@ import numpy as np
 
 def calc(a, b, N):
     x = np.linspace(a, b, N)
+    y = x ** 2
 
-    for i in range (0, len(x)):
-        x[i] = x[i] ** 2
+    return y
 
-    return x
-
-print(calc(-1, 1, 5))
+print(calc(-1, 1, 100))
