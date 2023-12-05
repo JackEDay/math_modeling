@@ -1,20 +1,14 @@
 import numpy as np
 
-def space():
-    option = input("Площадь какой фигуры найти? \n Окружность    Треугольник     Прямоугольник \n '1'\t\t'2'\t\t'3'\n")
+def space(op, a, b, h, r):
 
-    if option == '1':
-        r = int(input("Длина радиуса:   "))
+    if op == 'Circle':
         S = np.pi * r ** 2
     
-    elif option == '2':
-        a = int(input("Длина основания:     "))
-        h = int(input("Длина высоты:     "))
+    elif op == 'Triangle':
         S = (a * h) / 2
 
-    elif option == '3':
-        a = int(input("Длина первой стороны:     "))
-        b = int(input("Длина второй стороны:     "))
+    elif op == 'Rectangle':
         S = a * b
     
     else:
@@ -22,4 +16,10 @@ def space():
 
     return S
 
-print(space())
+option = "Circle"
+a = 10
+b = 7
+h = 16
+r = 5
+
+print(space(option, a, b, h, r))
