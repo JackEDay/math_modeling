@@ -3,7 +3,9 @@ def fib(n):
     b = 1
     for i in range (1, n):
         print(a)
-        a, b = b, a + b
+        c = a + b
+        a = b
+        b = c
 
-n = 5
-fib(15)
+n = 15
+fib(n)
