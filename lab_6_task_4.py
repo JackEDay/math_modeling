@@ -33,6 +33,7 @@ def plot_rod():
     y = np.sin(f)*r
 
     plt.plot(x, y)
+    plt.axis('equal')
     plt.savefig('lab_6_task_4_third.png')
 
 def plot_rose():
@@ -46,7 +47,7 @@ def plot_rose():
     plt.plot(x, y)
     plt.savefig('lab_6_task_4_forth.png')
 
-plot_log()
+#plot_log()
 #plot_arch()
-#plot_rod()
+plot_rod()
 #plot_rose()
