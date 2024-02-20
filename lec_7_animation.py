@@ -4,7 +4,7 @@ from matplotlib.animation import FuncAnimation
 
 fig, ax = plt.subplots()
 
-anim_object, = plt.plot([], [], '-', lw=2)
+anim_object, = plt.plot([], [], '-', lw=5)
 
 xdata, ydata = [], []
 
