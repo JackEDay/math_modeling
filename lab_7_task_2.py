@@ -12,12 +12,12 @@ def circle(a, t):
 def animate(i):
     ball.set_data(circle(a = 0.05, t=i))
 
-if __name__ == '__main__':
-    fig, ax = plt.subplots()
-    ball, = plt.plot([], [], 'o', color='r', label='Ball')
 
-    edge = 3
+if __name__ == '__main__':
     plt.axis('equal')
+    fig, ax = plt.subplots()
+    ball, = plt.plot([], [], '-', color='r', label='Ball')
+    edge = 3
 
     ax.set_xlim(-edge, edge)
     ax.set_ylim(-edge, edge)
@@ -27,5 +27,4 @@ if __name__ == '__main__':
                         frames=20,
                         interval=50
                         )
-    
     ani.save('Lab_7_task_2.gif')
