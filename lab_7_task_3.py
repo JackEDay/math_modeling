@@ -14,7 +14,7 @@ def animate(alpha):
 
 def update(beta):
     xdata2.append(16*(np.sin(beta))**3)
-    ydata2.append(13*np.cos(beta) - 3*np.cos(2*beta) - 2*np.cos(3*beta) - 4*np.cos(4*beta))
+    ydata2.append(13*np.cos(beta) - 3*np.cos(2*beta) - 2*np.cos(3*beta) - np.cos(4*beta))
     heart.set_data(xdata2, ydata2)
     return heart,
 
