@@ -1,32 +1,24 @@
-import matplotlib.pyplot as plt
 import numpy as np
-from matplotlib.animation import FuncAnimation
 
-def circle_move(R, vx0, vy0, t):
-    x0 = vx0 * t
-    y0 = vy0 * t
-    alpha = np.arange(0, 2*np.pi, 0.1)
-    x = x0 + R*np.cos(alpha)
-    y = y0 + R*np.sin(alpha)
-    return x, y
 
-def animate(i):
-    ball.set_data(circle_move(R=0.5, vx0=0.01, vy0=0.01, t=i))
+a = [1, 2, 3, 4, 5]
+b = [10, 9, 8, 7, 6]
 
-if __name__ == '__main__':
-    fig, ax = plt.subplots()
-    ball, = plt.plot([], [], '-', lw=0.7, color='b', label='Ball')
+def circle(xfirst, yfirst, C, D):
 
-    edge = 3
-    plt.axis('equal')
+ ##   x = np.zeros(100)
+##    y = np.zeros(100)
+ ##   x[0] = xfirst
+ ##   y[0] = yfirst
 
-    ax.set_xlim(-edge, edge)
-    ax.set_ylim(-edge, edge)
+    for i in range(1, 4):
 
-    ani = FuncAnimation(fig, 
-                        animate,
-                        frames=100,
-                        interval=30
-                        )
+        a[i] = a[i-1]
+        b[i] = b[i-1] + D
+
+ ##       x[i] = (x[i-1]**2 - y[i-1]**2 + C)
+  ##      y[i] = (2 * x[i-1] * y[i-1] + D)
+
+        return a
     
-    ani.save('animation_test.gif')
+print(circle(0.1, 0.1, 2, 5))

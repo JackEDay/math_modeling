@@ -12,7 +12,6 @@ def circle(a, t):
 def animate(i):
     ball.set_data(circle(a = 0.05, t=i))
 
-
 if __name__ == '__main__':
     plt.axis('equal')
     fig, ax = plt.subplots()
