@@ -3,17 +3,18 @@ import numpy as np
 from matplotlib.animation import FuncAnimation
 
 
-def animation(x, y, C, D, n):
+xdata1, ydata1 = [], []
 
-    xdata1, ydata1 = [], []
-    xdata1.append(x)
-    ydata1.append(y)
-
-    def animate(i):
+def animate(i):
         xdata1.append(xdata1[i]**2 - ydata1[i]**2 + C)
         ydata1.append(2 * xdata1[i] * ydata1[i] + D)
         kill.set_data(xdata1, ydata1)
         return kill,
+
+def animation(x, y, C, D, n):
+
+    xdata1.append(x)
+    ydata1.append(y)
 
     if __name__ == '__main__':
         plt.axis('equal')
