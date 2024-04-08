@@ -12,14 +12,14 @@ def planet(R, vel, t):
     return x, y
 
 def animate(i):
-    mercury.set_data(planet(R=2.1, vel=4.14772, t=i))    #Year = 88 days
-    venus.set_data(planet(R=3.6, vel=1.62222, t=i))      #Year = 225 days
+    mercury.set_data(planet(R=2.1, vel=4.14772, t=i + 22))    #Year = 88 days
+    venus.set_data(planet(R=3.6, vel=1.62222, t=i + 105))      #Year = 225 days
     earth.set_data(planet(R=5.5, vel=1, t=i))            #Year = 365 days
-    mars.set_data(planet(R=7, vel=0.53129, t=i))         #Year = 687 days
-    jupiter.set_data(planet(R=8.5, vel=0.08423, t=i))    #Year = 4333 days
-    saturn.set_data(planet(R=9.8, vel=0.03392, t=i))     #Year = 10 759 days
-    uranus.set_data(planet(R=11, vel=0.01189, t=i))      #Year = 30 687 days    
-    neptune.set_data(planet(R=12, vel=0.00606, t=i))     #Year = 60 190 days
+    mars.set_data(planet(R=7, vel=0.53129, t=i + 604))         #Year = 687 days
+    jupiter.set_data(planet(R=9, vel=0.08423, t=i + 500))    #Year = 4333 days
+    saturn.set_data(planet(R=9.8, vel=0.03392, t=i + 7898))     #Year = 10 759 days
+    uranus.set_data(planet(R=11, vel=0.01189, t=i + 12324))      #Year = 30 687 days    
+    neptune.set_data(planet(R=12, vel=0.00606, t=i + 56000))     #Year = 60 190 days
     moon.set_data(moonplt(R=1.2, vel=365, t=i))
 
     
