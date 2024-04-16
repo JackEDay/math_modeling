@@ -11,7 +11,7 @@ y0 = 2 * np.sin(t0)
 x1 = np.linspace(3, 4, 5)
 y1 = np.zeros(len(x1))
 
-t2 = np.linspace(np.pi, np.pi*2, 10)
+t2 = np.linspace(np.pi*2, np.pi, 10)
 x2 = 6 + 2 * np.cos(t2)
 y2 = 2 * np.sin(t2)
 
