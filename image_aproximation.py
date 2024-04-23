@@ -1,61 +1,85 @@
 import matplotlib.pyplot as plt
 import numpy as np
+from scipy import interpolate
 
 image = plt.imread('horsead.jpg')
 fig, ax = plt.subplots()
 
 ax.imshow(image)
 
-t = np.linspace(0, np.pi, 100)
-x = 50 + 47 * np.cos(t)
-y = 290 - 10 * np.sin(t)
-ax.plot(x, y, '-', lw=2, color='w')
+t = np.linspace(np.pi, 0, 100)
+a = 50 + 47 * np.cos(t)
+b = 290 - 10 * np.sin(t)
 
-t = np.linspace(np.pi/2, np.pi*7/6, 100)
-x = 138 + 47 * np.cos(t)
-y = 275 - 30 * np.sin(t)
-ax.plot(x, y, '-', lw=2, color='w')
+t = np.linspace(np.pi*7/6, np.pi/2, 100)
+a1 = 138 + 47 * np.cos(t)
+b1 = 275 - 30 * np.sin(t)
 
-x = [140, 164]
-y = [246, 115]
-ax.plot(x, y, '-', lw=2, color='w')
+x = np.append(a, a1)
+y = np.append(b, b1)
 
-t = np.linspace(-(np.pi*5/6), -np.pi/14, 100)
-x = 110 + 55 * np.cos(t)
-y = 105 - 45 * np.sin(t)
-ax.plot(x, y, '-', lw=2, color='w')
+a = [140, 164]
+b = [246, 115]
 
-x = [64, 90]
-y = [126, 108]
-ax.plot(x, y, '-', lw=2, color='w')
+x = np.append(x, a)
+y = np.append(y, b)
+
+t = np.linspace(-np.pi/14, -(np.pi*5/6), 100)
+a = 110 + 55 * np.cos(t)
+b = 105 - 45 * np.sin(t)
+
+x = np.append(x, a)
+y = np.append(y, b)
+
+a = [64, 90]
+b = [126, 108]
+
+x = np.append(x, a)
+y = np.append(y, b)
 
 t = np.linspace(-(np.pi*2/3), np.pi/6, 100)
-x = 103 + 25 * np.cos(t)
-y = 84 - 28 * np.sin(t)
-ax.plot(x, y, '-', lw=2, color='w')
+a = 103 + 25 * np.cos(t)
+b = 84 - 28 * np.sin(t)
 
-x = [126, 151]
-y = [69, 43]
-ax.plot(x, y, '-', lw=2, color='w')
+x = np.append(x, a)
+y = np.append(y, b)
 
-x = [151, 210]
-y = [43, 72]
-ax.plot(x, y, '-', lw=2, color='w')
+a = [126, 151]
+b = [69, 43]
+
+x = np.append(x, a)
+y = np.append(y, b)
+
+a = [150, 210]
+b = [43, 72]
+
+x = np.append(x, a)
+y = np.append(y, b)
 
 t = np.linspace(np.pi*4/7, np.pi/8, 100)
-x = 228 + 70 * np.cos(t)
-y = 220 - 150 * np.sin(t)
-ax.plot(x, y, '-', lw=2, color='w')
+a = 228 + 70 * np.cos(t)
+b = 220 - 150 * np.sin(t)
 
-x = [293, 270]
-y = [160, 285]
-ax.plot(x, y, '-', lw=2, color='w')
+x = np.append(x, a)
+y = np.append(y, b)
+
+a = [293, 270]
+b = [160, 285]
+
+x = np.append(x, a)
+y = np.append(y, b)
 
 t = np.linspace(np.pi/2, np.pi, 100)
-x = 270 + 30 * np.cos(t)
-y = 350 - 64 * np.sin(t)
-ax.plot(x, y, '-', lw=2, color='w')
+a = 270 + 30 * np.cos(t)
+b = 350 - 64 * np.sin(t)
+
+x = np.append(x, a)
+y = np.append(y, b)
+
+spline_coords, figure_spline_part = interpolate.splprep([x, y], s=0)
+spline_curve = interpolate.splev(figure_spline_part, spline_coords)
 
 plt.xlim(0, 350)
-plt.savefig("Horsehead.png")
+plt.plot(spline_curve[0], spline_curve[1], color='w')
 
+plt.savefig("Horsehead_inter.png")
