@@ -57,5 +57,5 @@ y = 350 - 64 * np.sin(t)
 ax.plot(x, y, '-', lw=2, color='w')
 
 plt.xlim(0, 350)
-plt.savefig("Horsehead.png")
+plt.savefig("Horsehead_HOMEWORK.png")
 
