@@ -95,6 +95,18 @@ b = [350, 320]
 x = np.append(x, a)
 y = np.append(y, b)
 
+a = 0
+b = 350
+
+x = np.append(x, a)
+y = np.append(y, b)
+
+a = 4
+b = 290
+
+x = np.append(x, a)
+y = np.append(y, b)
+
 spline_coords, figure_spline_part = interpolate.splprep([x, y], s=0)
 spline_curve = interpolate.splev(figure_spline_part, spline_coords)
 
@@ -116,4 +128,4 @@ for x_point_coord in np.linspace(*x_pictures_limits, points_number_per_side):
         if p.within(polygon):
             plt.plot(x_point_coord, y_point_coord, 'wo', ms = 1) 
 
-plt.savefig("Horsehead_inter_NEW.png")
+plt.savefig("Horsehead_HOMEWORK.png")

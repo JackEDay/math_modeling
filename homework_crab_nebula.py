@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 from scipy import interpolate
+import shapely.geometry as geom
 import numpy as np
 
 image = plt.imread('crab.jpg')
@@ -86,6 +87,22 @@ y = np.append(y, y1)
 spline_coords, figure_spline_part = interpolate.splprep([x, y], s=0)
 spline_curve = interpolate.splev(figure_spline_part, spline_coords)
 
-plt.plot(spline_curve[0], spline_curve[1], 'w')
 plt.axis('equal')
+plt.plot(spline_curve[0], spline_curve[1], 'w')
+
+curve_coords = []
+for i in range(len(spline_curve[0])):
+    curve_coords.append([spline_curve[0][i], spline_curve[1][i]])
+
+polygon = geom.Polygon(curve_coords)
+points_number_per_side = 100
+x_pictures_limits = [0, 1400]
+y_pictures_limits = [1400, 0]
+
+for x_point_coord in np.linspace(*x_pictures_limits, points_number_per_side):
+    for y_point_coord in np.linspace(*y_pictures_limits, points_number_per_side):
+        p = geom.Point(x_point_coord, y_point_coord)
+        if p.within(polygon):
+            plt.plot(x_point_coord, y_point_coord, 'wo', ms = 1) 
+
 plt.savefig('Crab_HOMEWORK.png')
