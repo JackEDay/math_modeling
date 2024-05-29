@@ -135,7 +135,7 @@ rho.points_generator()
 rho = ParticlesGenerator(20000, 850/1200, 250/1200, [30, 30])
 rho.points_generator()
 
-rho = ParticlesGenerator(20000, 640/1200, 1150/1200, [30, 30])
+rho = ParticlesGenerator(20000, 1140/1200, 780/1200, [30, 30])
 rho.points_generator()
 
 rho = ParticlesGenerator(20000, 150/1200, 1100/1200, [30, 30])
@@ -148,7 +148,7 @@ y_array = np.array(particle_coords)[:, 1]
 float_type = np.float64
 int_type = np.int32
 
-box_size = 1
+box_size = 20
  
 m_0 = 2*1.6735575e-24 # масса молекулы водорода в граммах
 n_0 = 2*10**5 # характерная концентрация частиц в частицах на куб. см
